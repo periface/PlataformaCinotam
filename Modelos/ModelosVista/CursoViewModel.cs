@@ -11,7 +11,7 @@ namespace Modelos.ModelosVista
     {
         public int idCurso { get; set; }
         public string titulo { get; set; }
-        public string sese { get; set; }
+        public string sede { get; set; }
         public DateTime fecha { get; set; }
         public DateTime fechaFinalizacion { get; set; }
         public string telefonoContacto { get; set; }

@@ -12,5 +12,9 @@ namespace Servicios.Interfaces
         Curso CargaCurso(int id);
         void GuardaCurso(Curso model);
         void EditarCurso(Curso model);
+        void EliminarCurso(Curso model);
+        void EliminarCurso(int id);
+        IEnumerable<Curso> Cursos();
+        
     }
 }

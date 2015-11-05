@@ -12,7 +12,7 @@ namespace Modelos.ModelosDominio
         public string nombreTema { get; set; }
         public virtual ICollection<ContenidoTema> contenidos { get; set; }
         public virtual ICollection<Materiales> materiales{ get; set; }
-        public int idCurso { get; set; }
+        public int? idCurso { get; set; }
         [ForeignKey("idCurso")]
         public virtual Curso curso { get; set; }
     }

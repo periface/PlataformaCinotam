@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Modelos.ModelosDominio
 {
-    [Table("Alumnos")]
+    [Table("Alumno")]
     public class Alumno : Usuario
     {
         [Key]

@@ -13,14 +13,23 @@ namespace PlataformaAprendizajeCinotam.Api.Controllers
     public class CursosController : ApiController
     {
         ICursoClientService _cursos;
-        public CursosController(ICursoClientService _cursos)
+        ICursoAdminService _cursosAdmin;
+        public CursosController(ICursoClientService _cursos,ICursoAdminService _cursosAdmin)
         {
             this._cursos = _cursos;
+            this._cursosAdmin = _cursosAdmin;
         }
         [HttpGet]
+        [Route("Api/Cursos/Curso/{id}")]
         public CursoViewModel Curso(int id) {
             var curso = _cursos.CargaCurso(id);
             return curso;
+        }
+        [HttpGet]
+        [Route("Api/Cursos/Todos/")]
+        public IEnumerable<CursoViewModel> Cursos() {
+            var cursos = _cursos.CargaCursos();
+            return cursos;
         }
     }
 }

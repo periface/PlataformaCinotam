@@ -11,7 +11,7 @@ namespace Modelos.ModelosDominio
         public bool soloInscritos { get; set; }
         public string tituloContenido { get; set; }
         public string contenido { get; set; }
-        public int idTema { get; set; }
+        public int? idTema { get; set; }
         [ForeignKey("idTema")]
         public virtual Tema tema { get; set; }
     }

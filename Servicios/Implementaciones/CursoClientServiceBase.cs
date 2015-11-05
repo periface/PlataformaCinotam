@@ -30,11 +30,11 @@ namespace Servicios.Implementaciones
             {
                 //Mapeado principal
                 cursoViewModel = Mapper.Map<Curso, CursoViewModel>(curso);
-                if (curso.mostrarPrecio)
-                {
-                    //Aqui se cargaria el precio
-                    cursoViewModel.precio = 100;
-                }
+                //if (curso.mostrarPrecio)
+                //{
+                //    //Aqui se cargaria el precio
+                //    cursoViewModel.precio = 100;
+                //}
             }
             return cursoViewModel;
         }
@@ -49,13 +49,33 @@ namespace Servicios.Implementaciones
             {
                 //Mapeado principal
                 cursoViewModel = Mapper.Map<Curso, CursoViewModel>(curso);
-                if (curso.mostrarPrecio)
-                {
-                    //Aqui se cargaria el precio
-                    cursoViewModel.precio = 100;
-                }
+                //if (curso.mostrarPrecio)
+                //{
+                //    //Aqui se cargaria el precio
+                //    cursoViewModel.precio = 100;
+                //}
             }
             return cursoViewModel;
+        }
+
+        public IEnumerable<CursoViewModel> CargaCursos()
+        {
+            List<CursoViewModel> model = new List<CursoViewModel>();
+            var cursos = _unidadDeTrabajo.RepositorioPublicacion.Cargar();
+            foreach (var item in cursos)
+            {
+                var cursoViewModel = Mapper.Map<Curso, CursoViewModel>(item);
+                //if (item.mostrarPrecio) {
+                //    cursoViewModel.precio = 100;
+                //}
+                model.Add(cursoViewModel);
+            }
+            return model;
+        }
+
+        public IEnumerable<CursoViewModel> CargaCursos(string busqueda, string orden, int pagina = 1)
+        {
+            throw new NotImplementedException();
         }
     }
 }

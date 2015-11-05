@@ -8,7 +8,7 @@ namespace Modelos.ModelosDominio
         [Key]
         public int idMaterial { get; set; }
         public string descripcion { get; set; }
-        public int idTema { get; set; }
+        public int? idTema { get; set; }
         [ForeignKey("idTema")]
         public virtual Tema tema { get; set; }
     }

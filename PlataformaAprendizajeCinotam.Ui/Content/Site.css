@@ -22,3 +22,20 @@ select,
 textarea {
     max-width: 280px;
 }
+.page-login { background:#00D0BC; color:#00907c; }
+.page.ng-leave 	{ z-index:9999; }
+.page.ng-enter 	{ z-index:8888; }
+
+.page-login.ng-leave         {
+    -webkit-transform-origin: 0% 0%;
+	-webkit-animation: rotateFall 1s both ease-in;
+	-moz-transform-origin: 0% 0%;
+	-moz-animation: rotateFall 1s both ease-in;
+	transform-origin: 0% 0%;
+	animation: rotateFall 1s both ease-in;
+}
+.page-login.ng-enter 		{  
+    -webkit-animation:scaleUp 0.5s both ease-in;
+	-moz-animation:scaleUp 0.5s both ease-in;
+	animation:scaleUp 0.5s both ease-in;    
+}

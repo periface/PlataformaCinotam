@@ -12,5 +12,7 @@ namespace Servicios.Interfaces
     {
         CursoViewModel CargaCurso(int idCurso,string urlSlug);
         CursoViewModel CargaCurso(int idCurso);
+        IEnumerable<CursoViewModel> CargaCursos();
+        IEnumerable<CursoViewModel> CargaCursos(string busqueda, string orden,int pagina=1);
     }
 }

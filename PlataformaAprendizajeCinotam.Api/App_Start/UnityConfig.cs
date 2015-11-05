@@ -1,6 +1,11 @@
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Practices.Unity;
+using PlataformaAprendizajeCinotam.Api.Controllers;
+using PlataformaAprendizajeCinotam.Api.Models;
 using Servicios.Implementaciones;
 using Servicios.Interfaces;
+using System.Data.Entity;
 using System.Web.Http;
 using Unity.WebApi;
 
@@ -17,6 +22,17 @@ namespace PlataformaAprendizajeCinotam.Api
 
             // e.g. container.RegisterType<ITestService, TestService>();
             container.RegisterType<ICursoClientService, CursoClientServiceBase>();
+            container.RegisterType<ICursoAdminService, CursoAdminServiceBase>();
+            container.RegisterType<IOtrosService, OtrosServiceBase>();
+
+            //Account
+            //Para user el accountController
+            container.RegisterType<AccountController>(new InjectionConstructor());
+            //Para poder usar identity
+            container.RegisterType<UserManager<ApplicationUser>>(new HierarchicalLifetimeManager());
+            container.RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>(new HierarchicalLifetimeManager());
+            container.RegisterType<DbContext, ApplicationDbContext>(new HierarchicalLifetimeManager());
+
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
     }

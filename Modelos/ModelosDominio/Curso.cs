@@ -2,16 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Mvc;
 
 namespace Modelos.ModelosDominio
 {
+    [Table("Cursos")]
     public class Curso
     {
         [Key]
         public int idCurso { get; set; }
         public string titulo { get; set; }
-        public string sese { get; set; }
+        public string sede { get; set; }
         public DateTime fecha{ get; set; }
         public DateTime fechaFinalizacion { get; set; }
         public string telefonoContacto { get; set; }
@@ -24,5 +26,8 @@ namespace Modelos.ModelosDominio
         public virtual ICollection<Instructor> instructores { get; set; }
         [AllowHtml]
         public string contenido { get; set; }
+        public int idCategoria { get; set; }
+        [ForeignKey("idCategoria")]
+        public virtual Categoria categoria { get; set; }
     }
 }

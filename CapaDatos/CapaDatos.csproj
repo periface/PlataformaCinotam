@@ -50,33 +50,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\DataContext.cs" />
-    <Compile Include="Migrations\201511050444072_inicial.cs" />
-    <Compile Include="Migrations\201511050444072_inicial.Designer.cs">
-      <DependentUpon>201511050444072_inicial.cs</DependentUpon>
+    <Compile Include="Migrations\201511051710597_Initial.cs" />
+    <Compile Include="Migrations\201511051710597_Initial.Designer.cs">
+      <DependentUpon>201511051710597_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511050446263_correccion.cs" />
-    <Compile Include="Migrations\201511050446263_correccion.Designer.cs">
-      <DependentUpon>201511050446263_correccion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511050500066_actualizacionSlug.cs" />
-    <Compile Include="Migrations\201511050500066_actualizacionSlug.Designer.cs">
-      <DependentUpon>201511050500066_actualizacionSlug.cs</DependentUpon>
+    <Compile Include="Migrations\201511051713313_inicial2.cs" />
+    <Compile Include="Migrations\201511051713313_inicial2.Designer.cs">
+      <DependentUpon>201511051713313_inicial2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositorioGenerico\RepositorioGenerico.cs" />
     <Compile Include="UnidadDeTrabajo\UnidadDeTrabajo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511050444072_inicial.resx">
-      <DependentUpon>201511050444072_inicial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511050446263_correccion.resx">
-      <DependentUpon>201511050446263_correccion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511050500066_actualizacionSlug.resx">
-      <DependentUpon>201511050500066_actualizacionSlug.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -87,6 +72,14 @@
       <Project>{86550c65-1dd9-43e3-b754-bbc981fdd812}</Project>
       <Name>Modelos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201511051710597_Initial.resx">
+      <DependentUpon>201511051710597_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511051713313_inicial2.resx">
+      <DependentUpon>201511051713313_inicial2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
