@@ -1,7 +1,7 @@
-﻿App.factory("publicacionesRepository", ["$http", function ($http) {
+﻿App.factory("cursosRepository", ["$http", function ($http) {
     return {
-        cargaPublicacion: function () {
-            var url = webApiEndPoint + "api/Cursos/Curso/1"
+        cargaCurso: function () {
+            var url = webApiEndPoint + "api/Cursos/Curso/2"
             return $http.get(url);
         },
         cargaPublicaciones: function () {

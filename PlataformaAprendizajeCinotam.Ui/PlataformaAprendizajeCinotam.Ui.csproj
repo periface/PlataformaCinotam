@@ -130,6 +130,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\animate.css" />
     <Content Include="Content\WebSite\Cuentas\Login.html" />
     <Content Include="Content\WebSite\Cuentas\Registro.html" />
     <Content Include="Content\WebSite\Cursos\Index.html" />
@@ -175,14 +176,14 @@
     <Content Include="Scripts\App\Controllers\InicioController.js" />
     <Content Include="Scripts\App\Controllers\LoginController.js" />
     <Content Include="Scripts\App\Controllers\MenuPrincipal.js" />
-    <Content Include="Scripts\App\Controllers\PublicacionesController.js" />
+    <Content Include="Scripts\App\Controllers\CursosController.js" />
     <Content Include="Scripts\App\Controllers\RegistroController.js" />
     <Content Include="Scripts\App\ExternalPlugins\angular-local-storage.min.js" />
     <Content Include="Scripts\App\ExternalPlugins\loading-bar.css" />
     <Content Include="Scripts\App\ExternalPlugins\loading-bar.js" />
     <Content Include="Scripts\App\Interceptors\AuthInterceptor.js" />
     <Content Include="Scripts\App\Services\LoginService.js" />
-    <Content Include="Scripts\App\Services\PublicacionesService.js" />
+    <Content Include="Scripts\App\Services\CursosService.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-touch.min.js.map" />

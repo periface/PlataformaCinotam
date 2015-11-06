@@ -11,7 +11,8 @@ var configuracion = function ($routeProvider, $httpProvider) {
         controller: "paginaInicio"
     }).when("/Cursos", {
         title: "Cursos",
-        templateUrl: rutaArchivosWeb + "/Cursos/Index.html"
+        templateUrl: rutaArchivosWeb + "/Cursos/Index.html",
+        controller:"cursosController"
     }).when("/Registro", {
         title: "Iniciar Sesión",
         templateUrl: rutaArchivosWeb + "/Cuentas/Registro.html",

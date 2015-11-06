@@ -19,7 +19,6 @@ namespace PlataformaAprendizajeCinotam.Api
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             UnityConfig.RegisterComponents();
-            
         }
     }
 }

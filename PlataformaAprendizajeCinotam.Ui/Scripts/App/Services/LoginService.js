@@ -3,14 +3,21 @@
         logged : false,
         nombre: "",
     };
-    var _iniciarSesion = function (loginData) {
+    var _iniciarSesion = function (loginData,returnUrl) {
         var data = "grant_type=password&username=" + loginData.username + "&password=" + loginData.password;
-        console.log(data);
+        
         var response = $http.post(webApiEndPoint + "Token", data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' } });
         response.then(function (d) {
             _usuario.logged = true;
             localStorageService.set("tokenData",{ token: d.data.access_token,userName:loginData.username});
-            $location.path("/Cursos");
+            if (returnUrl == undefined) {
+
+                $location.path("/Inicio")
+            }
+            else {
+
+                $location.path(returnUrl);
+            }
         });
     }
     var _registrar = function (loginData) {
@@ -19,7 +26,6 @@
             contentType:"application/json; charset=utf-8"
         });
         response.then(function (d) {
-            console.log(d.data);
             console.log("Registro exitoso");
             $location.path("/Inicio");
         });
@@ -31,22 +37,17 @@
         $location.path("/Inicio");
     }
     var _cargaInfo = function () {
-        console.log("cargado");
         var logInfo = localStorageService.get("tokenData");
         if (logInfo) {
             _usuario = {};
             _usuario.logged = true;
             _usuario.nombre = logInfo.userName;
-
-            console.log(_usuario);
             return _usuario;
         }
         else {
             _usuario = {};
             _usuario.logged = false;
             _usuario.nombre = "";
-
-            console.log(_usuario);
             return _usuario;
         }
     }

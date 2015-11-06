@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - My ASP.NET Application</title><link href="~/Scripts/App/ExternalPlugins/loading-bar.css" rel="stylesheet" />
+<link href="~/Content/animate.css" rel="stylesheet" />
     @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
-        <link href="~/Scripts/App/ExternalPlugins/loading-bar.css" rel="stylesheet" />
+    
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -43,14 +44,14 @@
     <script src="~/Scripts/App/ExternalPlugins/loading-bar.js"></script>
     <script src="~/Scripts/App/ExternalPlugins/angular-local-storage.min.js"></script>
     <script src="~/Scripts/App/App.js"></script>
-    <script src="~/Scripts/App/Services/PublicacionesService.js"></script>
+    <script src="~/Scripts/App/Services/CursosService.js"></script>
     <script src="~/Scripts/App/Services/LoginService.js"></script>
     <script src="~/Scripts/App/Controllers/MenuPrincipal.js"></script>
     <script src="~/Scripts/App/Controllers/CabeceraController.js"></script>
     <script src="~/Scripts/App/Controllers/RegistroController.js"></script>
     <script src="~/Scripts/App/Controllers/LoginController.js"></script>
     <script src="~/Scripts/App/Controllers/InicioController.js"></script>
-    <script src="~/Scripts/App/Controllers/PublicacionesController.js"></script>
+    <script src="~/Scripts/App/Controllers/CursosController.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
