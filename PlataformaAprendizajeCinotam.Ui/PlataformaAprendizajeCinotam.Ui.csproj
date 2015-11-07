@@ -178,10 +178,12 @@
     <Content Include="Scripts\App\Controllers\MenuPrincipal.js" />
     <Content Include="Scripts\App\Controllers\CursosController.js" />
     <Content Include="Scripts\App\Controllers\RegistroController.js" />
+    <Content Include="Scripts\App\Directives\MenuAuthDirective.js" />
     <Content Include="Scripts\App\ExternalPlugins\angular-local-storage.min.js" />
     <Content Include="Scripts\App\ExternalPlugins\loading-bar.css" />
     <Content Include="Scripts\App\ExternalPlugins\loading-bar.js" />
     <Content Include="Scripts\App\Interceptors\AuthInterceptor.js" />
+    <Content Include="Scripts\App\Interceptors\InterceptorRutasAuth.js" />
     <Content Include="Scripts\App\Services\LoginService.js" />
     <Content Include="Scripts\App\Services\CursosService.js" />
     <Content Include="Scripts\errors.json" />
@@ -977,7 +979,6 @@
     <Folder Include="Content\WebSite\Alumno\" />
     <Folder Include="Content\WebSite\Instructor\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\App\Directives\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

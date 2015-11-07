@@ -57,12 +57,14 @@ namespace PlataformaAprendizajeCinotam.Api.Controllers
         public UserInfoViewModel GetUserInfo()
         {
             ExternalLoginData externalLogin = ExternalLoginData.FromIdentity(User.Identity as ClaimsIdentity);
-
+            var username = User.Identity.GetUserName();
+            var roles = UserManager.GetRoles(User.Identity.GetUserId());
             return new UserInfoViewModel
             {
                 Email = User.Identity.GetUserName(),
                 HasRegistered = externalLogin == null,
-                LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
+                LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null,
+                Roles = roles,
             };
         }
 

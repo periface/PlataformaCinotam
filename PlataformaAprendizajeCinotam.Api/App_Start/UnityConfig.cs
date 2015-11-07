@@ -15,7 +15,7 @@ namespace PlataformaAprendizajeCinotam.Api
     {
         public static void RegisterComponents()
         {
-			var container = new UnityContainer();
+            var container = new UnityContainer();
 
             // register all your components with the container here
             // it is NOT necessary to register your controllers
@@ -23,8 +23,9 @@ namespace PlataformaAprendizajeCinotam.Api
             // e.g. container.RegisterType<ITestService, TestService>();
             container.RegisterType<ICursoClientService, CursoClientServiceBase>();
             container.RegisterType<ICursoAdminService, CursoAdminServiceBase>();
-            container.RegisterType<IOtrosService, OtrosServiceBase>();
-
+            container.RegisterType<ICategoriaClientService, CategoriaClientServiceBase>();
+            container.RegisterType<IImgService, ImgServiceBase>();
+            container.RegisterType<ITextSevice, TextServiceBase>();
             //Account
             //Para user el accountController
             container.RegisterType<AccountController>(new InjectionConstructor());

@@ -10,16 +10,15 @@ namespace Servicios.Implementaciones
 {
     public class CursoAdminServiceBase : ICursoAdminService
     {
-        private readonly IOtrosService _otrosServicios;
         private readonly CapaDatos.UnidadDeTrabajo.UnidadDeTrabajo _unidadTrabajo;
-        public CursoAdminServiceBase(IOtrosService _otrosServicios, CapaDatos.UnidadDeTrabajo.UnidadDeTrabajo _unidadTrabajo)
+        private readonly IImgService _img;
+        public CursoAdminServiceBase(CapaDatos.UnidadDeTrabajo.UnidadDeTrabajo _unidadTrabajo,IImgService _img)
         {
-            this._otrosServicios = _otrosServicios;
             this._unidadTrabajo = _unidadTrabajo;
+            this._img = _img;
         }
         public Curso CargaCurso(int id)
         {
-            _otrosServicios.eliminaImg("");
             return new Curso();
         }
 
@@ -45,7 +44,7 @@ namespace Servicios.Implementaciones
 
         public void GuardaCurso(Curso model)
         {
-            throw new NotImplementedException();
+            _img.EliminaImagen("");
         }
     }
 }

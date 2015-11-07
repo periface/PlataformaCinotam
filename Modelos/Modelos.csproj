@@ -77,6 +77,7 @@
     <Compile Include="ModelosDominio\Materiales.cs" />
     <Compile Include="ModelosDominio\Tema.cs" />
     <Compile Include="ModelosDominio\Usuario.cs" />
+    <Compile Include="ModelosVista\CategoriaViewModel.cs" />
     <Compile Include="ModelosVista\CursoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

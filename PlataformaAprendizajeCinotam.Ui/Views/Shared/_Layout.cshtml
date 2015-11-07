@@ -3,11 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title><link href="~/Scripts/App/ExternalPlugins/loading-bar.css" rel="stylesheet" />
-<link href="~/Content/animate.css" rel="stylesheet" />
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Scripts/App/ExternalPlugins/loading-bar.css" rel="stylesheet" />
+    <link href="~/Content/animate.css" rel="stylesheet" />
     @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
-    
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        [ng-click],
+        [data-ng-click],
+        [x-ng-click] {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -27,8 +34,9 @@
                     <li><a ng-show="!usuario.logged" href="#Registro">Registrarse</a></li>
                     <li><a ng-show="!usuario.logged" href="#Login">Iniciar Sesión</a></li>
                     <li><a ng-show="usuario.logged" href="#MisCursos">Mis Cursos</a></li>
-                    <li ><a ng-show="usuario.logged" href="#" ng-click="LogOut()">Cerrar Sesión</a></li>
                     <li><a ng-show="usuario.logged" ng-bind="usuario.nombre"></a></li>
+                    <li><a ng-show="usuario.logged" href="#Panel" acceso="Administrador">Mi panel de control</a></li>
+                    <li><a ng-show="usuario.logged" ng-click="LogOut()">Cerrar Sesión</a></li>
                 </ul>
             </div>
         </div>
@@ -41,11 +49,14 @@
     <script src="~/Scripts/angular-animate.min.js"></script>
     <script src="~/Scripts/App/AppGlobalConfig.js"></script>
     <script src="~/Scripts/App/Interceptors/AuthInterceptor.js"></script>
+
     <script src="~/Scripts/App/ExternalPlugins/loading-bar.js"></script>
     <script src="~/Scripts/App/ExternalPlugins/angular-local-storage.min.js"></script>
     <script src="~/Scripts/App/App.js"></script>
+    <script src="~/Scripts/App/Interceptors/InterceptorRutasAuth.js"></script>
     <script src="~/Scripts/App/Services/CursosService.js"></script>
     <script src="~/Scripts/App/Services/LoginService.js"></script>
+    <script src="~/Scripts/App/Directives/MenuAuthDirective.js"></script>
     <script src="~/Scripts/App/Controllers/MenuPrincipal.js"></script>
     <script src="~/Scripts/App/Controllers/CabeceraController.js"></script>
     <script src="~/Scripts/App/Controllers/RegistroController.js"></script>

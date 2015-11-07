@@ -14,6 +14,8 @@ namespace CapaDatos.UnidadDeTrabajo
     public class UnidadDeTrabajo : IDisposable
     {
         private DataContext context = new DataContext();
+
+        //Curso
         private RepositorioGenerico.RepositorioGenerico<Curso> repositorioPublicacion;
         public RepositorioGenerico.RepositorioGenerico<Curso> RepositorioPublicacion
         {
@@ -24,6 +26,17 @@ namespace CapaDatos.UnidadDeTrabajo
                 return repositorioPublicacion;
             }
         }
+        //Fin Curso
+
+        private RepositorioGenerico.RepositorioGenerico<Categoria> repositorioCategoria;
+        public RepositorioGenerico.RepositorioGenerico<Categoria> RepositorioCategoria{
+            get {
+                if (repositorioCategoria == null)
+                    repositorioCategoria = new RepositorioGenerico.RepositorioGenerico<Categoria>(context);
+                return repositorioCategoria;
+            }
+        }
+
         public void Guardar() {
             context.SaveChanges();
         }

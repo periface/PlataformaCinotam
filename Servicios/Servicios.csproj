@@ -45,15 +45,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementaciones\CategoriaClientServiceBase.cs" />
     <Compile Include="Implementaciones\CursoAdminServiceBase.cs" />
     <Compile Include="Implementaciones\CursoClientServiceBase.cs" />
-    <Compile Include="Implementaciones\OtrosServiceBase.cs" />
+    <Compile Include="Implementaciones\ImgServiceBase.cs" />
+    <Compile Include="Implementaciones\TextServiceBase.cs" />
+    <Compile Include="Interfaces\ICategoriaClientService.cs" />
     <Compile Include="Interfaces\ICursoClientService.cs" />
     <Compile Include="Interfaces\ICursoAdminService.cs" />
     <Compile Include="Interfaces\ICursoComentarioClientService.cs" />
     <Compile Include="Interfaces\ICursoUsuarioAdminService.cs" />
-    <Compile Include="Interfaces\IOtrosService.cs" />
+    <Compile Include="Interfaces\IImgService.cs" />
+    <Compile Include="Interfaces\ITextSevice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicioMapeo\AutoMapperService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

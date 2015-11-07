@@ -20,7 +20,6 @@ namespace PlataformaAprendizajeCinotam.Api.Controllers
             this._cursosAdmin = _cursosAdmin;
         }
         [HttpGet]
-        [Authorize]
         [Route("Api/Cursos/Curso/{id}")]
         public CursoViewModel Curso(int id) {
             var curso = _cursos.CargaCurso(id);
@@ -32,5 +31,6 @@ namespace PlataformaAprendizajeCinotam.Api.Controllers
             var cursos = _cursos.CargaCursos();
             return cursos;
         }
+        
     }
 }

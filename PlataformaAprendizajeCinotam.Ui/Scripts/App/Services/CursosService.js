@@ -1,8 +1,15 @@
-﻿App.factory("cursosRepository", ["$http", function ($http) {
+﻿App.factory("cursosRepository", ["$http","$q", function ($http,$q) {
     return {
         cargaCurso: function () {
+            var deferred = $q.defer();
+            var promise = deferred.promise;
             var url = webApiEndPoint + "api/Cursos/Curso/2"
-            return $http.get(url);
+            $http.get(url).success(function(data){
+              deferred.resolve(data);
+            }).error(function(err){
+              deferred.reject(err);
+            });
+            return promise;
         },
         cargaPublicaciones: function () {
             var url = webApiEndPoint + "api/Cursos/Todos";
